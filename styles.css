@@ -1,0 +1,60 @@
+:root { color-scheme: light; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; color: #252b28; background: #f5f6f3; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+button { cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 3px solid #bd4e25; outline-offset: 4px; }
+.site-header { max-width: 1200px; margin: auto; padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; }
+.brand { display: flex; align-items: center; gap: 11px; color: inherit; text-decoration: none; font-size: 20px; font-weight: 700; }
+.brand-icon { display: grid; place-items: center; background: #263c33; color: white; width: 33px; height: 33px; border-radius: 10px; font-size: 27px; }
+.brand-caption { font-size: 10px; letter-spacing: 2px; color: #777e78; font-weight: 500; margin-left: 5px; }
+.local-badge { font-size: 12px; color: #626e64; display: flex; gap: 8px; align-items: center; }
+.local-badge i { width: 6px; height: 6px; background: #6a9071; border-radius: 50%; }
+main { max-width: 910px; margin: 35px auto 0; padding: 0 28px 30px; }
+.intro { margin-bottom: 35px; }
+.eyebrow { font-size: 10px; letter-spacing: 2.2px; color: #8c684d; font-weight: 600; }
+h1 { font-size: clamp(27px, 4vw, 36px); letter-spacing: -1px; font-weight: 650; margin: 14px 0; }
+.intro > p:last-child { color: #6c736d; font-size: 14px; line-height: 1.8; }
+.workspace { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
+.calculator { background: #fff; padding: 24px; border: 1px solid #e2e5de; border-radius: 22px; box-shadow: 0 15px 45px #263c3308; min-width: 0; }
+.display { padding: 2px 4px 10px; }
+.display-label { display: flex; justify-content: space-between; font-size: 11px; color: #798077; gap: 8px; }
+#expression { margin-top: 24px; padding: 5px 0; width: 100%; background: transparent; border: 0; border-bottom: 1px solid transparent; color: #535e54; font-size: 23px; text-align: right; outline: none; }
+#expression:focus { border-bottom-color: #b2c2b4; }
+#expression[aria-invalid="true"] { border-bottom-color: #b03e29; }
+#expression::placeholder { color: #a4aaa4; }
+.result-line { display: flex; align-items: baseline; gap: 16px; margin-top: 10px; }
+.result-line > span { font-size: 20px; color: #96a197; }
+#result { flex: 1; text-align: right; font-size: clamp(28px, 4vw, 43px); line-height: 1.3; font-weight: 550; letter-spacing: -1px; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+#feedback { min-height: 19px; margin: 10px 0 5px; color: #7a8179; text-align: right; font-size: 11px; }
+#feedback.error { color: #b03e29; }
+.keypad { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.keypad button { height: 62px; border: 1px solid transparent; background: #f5f6f3; color: #26372c; font-size: 23px; border-radius: 12px; transition: background .12s, transform .12s; }
+.keypad button:hover { background: #e8ece5; }
+.keypad button:active { transform: scale(.95); }
+.keypad .utility { background: #eef1ea; color: #5f6e60; }
+.keypad .clear { background: #faeee6; color: #ad4c2f; font-size: 17px; font-weight: 600; }
+.keypad .operator { background: #e9eee6; color: #3b5941; font-size: 27px; }
+.keypad .equals { background: #c15b36; color: white; box-shadow: 0 4px 10px #c15b3620; }
+.keypad .equals:hover { background: #a74826; }
+.keyboard-tip { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; color: #7d847b; font-size: 10px; margin-top: 21px; }
+kbd { font: inherit; background: #f4f5f1; border: 1px solid #e5e7e0; border-radius: 4px; padding: 2px 4px; margin-right: 3px; }
+.history-panel { border: 1px solid #e2e5de; background: #fafbf8; border-radius: 22px; padding: 25px 23px; display: flex; flex-direction: column; min-width: 0; }
+.history-heading { display: flex; align-items: center; justify-content: space-between; }
+h2 { margin: 0; font-size: 15px; font-weight: 600; }
+#history-count { margin-left: 5px; background: #e9ede6; color: #64725f; padding: 2px 6px; border-radius: 5px; font-size: 10px; }
+.text-button { border: 0; background: transparent; font-size: 12px; color: #737c71; padding: 7px 0 7px 12px; }
+.text-button:hover { color: #aa4528; }
+.text-button:disabled { color: #adb3a9; cursor: default; }
+.history-description { font-size: 11px; color: #858c81; margin-top: 13px; }
+#history-list { flex: 1; max-height: 404px; min-height: 230px; overflow-y: auto; padding: 5px 0; }
+.empty-history { min-height: 230px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #92998d; gap: 12px; font-size: 12px; }
+.empty-history span { display: grid; place-items: center; width: 45px; height: 45px; border: 1px solid #e3e8de; border-radius: 14px; color: #85967f; font-size: 24px; }
+.history-item { width: 100%; display: flex; flex-direction: column; gap: 9px; align-items: flex-end; padding: 17px 8px; background: transparent; border: 0; border-bottom: 1px solid #e9ece4; text-align: right; border-radius: 5px; }
+.history-item:hover { background: #eef1e9; }
+.history-item small { color: #7a8575; font-size: 12px; overflow-wrap: anywhere; max-width: 100%; }
+.history-item strong { color: #34492f; font-size: 22px; font-weight: 500; overflow-wrap: anywhere; max-width: 100%; }
+.history-note { padding-top: 20px; margin: 0; font-size: 10px; color: #8d9686; }
+footer { display: flex; justify-content: space-between; margin-top: 22px; font-size: 11px; color: #8a9286; gap: 12px; }
+@media (max-width: 650px) { .site-header { padding: 22px; } .brand-caption { display: none; } .local-badge { font-size: 10px; } main { margin-top: 22px; padding: 0 18px 25px; } .intro { margin-bottom: 25px; } .workspace { grid-template-columns: minmax(0, 1fr); gap: 20px; } .calculator { padding: 20px; } .history-panel { padding: 22px; } #history-list { max-height: 260px; min-height: 120px; } .empty-history { min-height: 120px; } footer { font-size: 10px; } }
+@media (prefers-reduced-motion: reduce) { .keypad button { transition: none; } }

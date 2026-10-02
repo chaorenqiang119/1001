@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="简洁好用的网页计算器，支持括号、键盘输入和本地计算历史。">
+  <meta name="color-scheme" content="light">
+  <title>简算 · 计算器</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="calculator.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="./index.html"><span class="brand-icon" aria-hidden="true">=</span>简算<span class="brand-caption">CALCULATOR</span></a><span class="local-badge"><i></i>本地计算，无需联网</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">LESS DISTRACTION. MORE CLARITY.</p><h1>让计算，简单一点。</h1><p>从日常开销到随手验算，每一个答案都清清楚楚。</p></section>
+    <div class="workspace">
+      <section class="calculator" aria-label="计算器">
+        <div class="display">
+          <div class="display-label"><label for="expression">输入算式</label><span>支持括号 · 先乘除后加减</span></div>
+          <input id="expression" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="200" placeholder="0" aria-describedby="feedback" aria-label="算式">
+          <div class="result-line"><span>=</span><output id="result" for="expression" aria-live="polite">0</output></div>
+          <p id="feedback" role="status">准备好了，开始计算吧</p>
+        </div>
+        <div class="keypad" aria-label="计算按键">
+          <button class="clear" data-action="clear" aria-label="清空算式">AC</button><button class="utility" data-value="(">(</button><button class="utility" data-value=")">)</button><button class="utility" data-action="backspace" aria-label="退格">⌫</button>
+          <button data-value="7">7</button><button data-value="8">8</button><button data-value="9">9</button><button class="operator" data-value="÷" aria-label="除">÷</button>
+          <button data-value="4">4</button><button data-value="5">5</button><button data-value="6">6</button><button class="operator" data-value="×" aria-label="乘">×</button>
+          <button data-value="1">1</button><button data-value="2">2</button><button data-value="3">3</button><button class="operator" data-value="−" aria-label="减">−</button>
+          <button data-value="0">0</button><button data-value=".">.</button><button class="equals" data-action="calculate" aria-label="计算结果">=</button><button class="operator" data-value="+" aria-label="加">+</button>
+        </div>
+        <div class="keyboard-tip"><span><kbd>Enter</kbd> 计算</span><span><kbd>Esc</kbd> 清空</span><span><kbd>⌫</kbd> 退格</span></div>
+      </section>
+      <aside class="history-panel" aria-labelledby="history-title">
+        <div class="history-heading"><h2 id="history-title">计算历史 <span id="history-count">0</span></h2><button id="clear-history" class="text-button">清空</button></div>
+        <p class="history-description">最近 20 条，点击结果继续计算</p>
+        <div id="history-list"></div>
+        <p class="history-note">历史仅保存在当前浏览器</p>
+      </aside>
+    </div>
+    <footer>小数 · 负数 · 括号运算<span>一个专注计算的小工具</span></footer>
+  </main>
+</body>
+</html>
